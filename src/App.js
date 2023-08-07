@@ -1,13 +1,22 @@
+import {  Route,  Routes } from 'react-router-dom'
+import Navbar from './Navbar';
+import Footer from './component/Footer';
+import Home from './component/Home';
+import Calculator from './component/calculator';
 
-import AbsentChecker from './AbsentChecker.jsx';
-import StudentList from './StudentList.jsx';
+
+
+
 function App() {
-  return(<div>
-  <StudentList/>
-  <AbsentChecker/>
-  </div>
+ 
+  return (
+    <div >
+      <Calculator/>
+        
+   </div>
+  )
 
-  ); 
+
 }
 
 export default App;
