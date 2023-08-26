@@ -1,9 +1,6 @@
 
 import Quote from './component/Quote';
 
-
-
-
 function App() {
  
   return (

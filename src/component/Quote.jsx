@@ -5,7 +5,6 @@ const ButtonComponent=({handleClick})=> {
         <button onClick={handleClick}>Generate a Quote</button>
 
     ) 
-
 }
 const Quote = () => {
     const[quotes,setQoutes]=useState("")
