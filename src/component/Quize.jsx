@@ -11,6 +11,7 @@ const AnswerOptions = ({ answers, correctAnswer, onAnswerClick , selectedAnswer}
                 backgroundColor: selectedAnswer === answer ? (answer === correctAnswer ? 'green' : 'red') : 'white'
               }}
         >
+          
           {answer}
         </li>
       ))}
