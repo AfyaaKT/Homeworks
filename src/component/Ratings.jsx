@@ -11,6 +11,7 @@ const Ratings = () => {
         location: 'Jadria',
         rate:4}
     ])
+    
     const[newRestuarants, setNewRestuarants]=useState({name:'' , location:'', rate:''})
 
       const addRestuarant=()=>{
