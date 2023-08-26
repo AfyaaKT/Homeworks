@@ -5,6 +5,7 @@ const ResPage = () => {
     <div>
         <h1>HI FROM THE BEST RESTUARANT</h1>
     </div>
+    
   )
 }
 
