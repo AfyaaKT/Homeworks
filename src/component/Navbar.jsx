@@ -7,6 +7,7 @@ const Navbar = () => {
       <h1>FRIED CHICKEN RESTUARANTS APP</h1>
 <Link to="/"  >Home</Link>
 <Link to="/about"  >About</Link>
+
   
   </div>);
 }

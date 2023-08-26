@@ -12,6 +12,7 @@ function App() {
     <div >
       
       <Navbar/>
+      
       <Routes>
         <Route path='/' element={<Ratings/>}/>
         <Route path='/ResPage' element={<ResPage/>} />
