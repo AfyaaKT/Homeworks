@@ -12,6 +12,7 @@ const Home = () => {
       ); 
       setCartoons(filtered)
 
+      
     }
     const addTooFavorite = (inputcartoon) => {
       if (! favorites.includes(inputcartoon)){
