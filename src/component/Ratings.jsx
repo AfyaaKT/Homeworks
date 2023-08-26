@@ -1,52 +1,74 @@
 import { useState } from "react";
-import ResList from "./ResList";
+import { Link } from "react-router-dom";
 
 
 const Ratings = () => {
     const[restuarants,setRestuarant]=useState([
         {name:'KFC' ,
         location: 'Jadria',
-        rate:5,
-        id:1},
-        {name:'Lees' ,
+        rate:5},
+        {name:'LEES' ,
         location: 'Jadria',
-        rate:4,
-        id:2}
+        rate:4}
     ])
+    const[newRestuarants, setNewRestuarants]=useState({name:'' , location:'', rate:''})
 
-      const addRestuarant=(name)=>{
-        const newRes=[...restuarants,{name}];
-        setRestuarant(newRes)
+      const addRestuarant=()=>{
+        if(newRestuarants.name && newRestuarants.location && newRestuarants.rate){
+          const newRes=[...restuarants,newRestuarants];
+          setRestuarant(newRes)
+          setNewRestuarants("")
+        }
+        
 
       }
-      const handleDelete=(id)=>{
-        const newRes=restuarants.filter(item=>item.id !== id);
+      const handleDelete=(index)=>{
+        const newRes=restuarants.filter((_,i)=>index !== i);
         setRestuarant(newRes);
+        
 
       }
       
-      const handleName=(e) => {
-        setRestuarant({...restuarants, name:e.target.value})
-
-      }
-      const handleLocation=(e) => {
-        setRestuarant({...restuarants, location:e.target.value})
-      }
-      const handleRate=(e) => {
-        setRestuarant({...restuarants, rate:e.target.value})
-      }
+      
       
 
       
   return (
     <div>
-     <ResList carrier={restuarants} title="The Restuaranr List" handleDelete={handleDelete}/>
+     <div>
+        <h1>Add your Favorite Restuaran</h1>
+    <label>Name:<input type="text"
+    value={newRestuarants.name}
+    onChange={(e)=>setNewRestuarants({...newRestuarants, name:e.target.value})}
+     />
+    </label>
+    <label>Location:<input type="text"
+    value={newRestuarants.location}
+    onChange={(e)=>setNewRestuarants({...newRestuarants , location:e.target.value})} />
+    Rate:
+    </label>
+    <input value={newRestuarants.rate}
+    onChange={(e)=>setNewRestuarants({...newRestuarants, rate:e.target.value})}
+     />
+        
+    <button onClick={addRestuarant}>Add New Restuarant</button>
+    
+    
+    </div>
+    
+         {restuarants.map((item,index) => (
+        <div key={index} className="res">
+        <Link to="/ResPage">
+        <h1>{item.name}</h1>
+        </Link>
+        <p>{item.location}</p>
+        <p>{item.rate}</p>  
+        <button onClick={()=>handleDelete(index)} >Delet Restuarant</button>
+    
+        </div>
+
+      ))};
      
-      <input name='name' value={restuarants.name} onChange={handleName}/>
-      <input name='location' value={restuarants.location} onChange={handleLocation}/>
-      <input name='rate' value={restuarants.rate} onChange={handleRate}/>
-      <button onSubmit={()=>addRestuarant}>Submit</button>
-      
     </div>
   )
 }

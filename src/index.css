@@ -27,3 +27,12 @@ code {
   margin-bottom: 8px;
   
 }
+.question-container{
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  border-radius: 25px;
+}

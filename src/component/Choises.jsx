@@ -1,12 +1,16 @@
-const Choises=(props)=>{
-    const answers=props.answers;
-    const handleClick=() =>(
-      "Correct"
-  );
+const Choises=({answers,handleAnswerClick})=>{
+    
+    
       
     return(
       <div>
-        {answers.map(item=><div  key={item.id}>{item.trueOrFalse ? <button onClick={()=>handleClick()}  >{tem.answer}</button>:<div>{item.answer}</div>}  </div>)}
+        {answers.map(item=><div
+           key={item.id}
+           onClick={()=> handleAnswerClick()}
+           style={{backgroundColor: item.trueOrFalse? 'greem': 'red'}}> 
+           {item.answer}
+
+          </div>)}
   
       </div>
     );
